@@ -10,11 +10,11 @@ const mongoUrl = process.env.MONGODB_URL;
 const client = new MongoClient(mongoUrl);
 
 // App Configuration
-const channelIds = [-1002191790432];
+const channelIds = [-1001594256026];
 const freeSequenceLimit = 5;
 const requiredReferrals = 5;
 const signalInterval = 2 * 5 * 1000; // 2 minutes
-const videoUrl = 'https://t.me/gsgzheh/3';
+const videoUrl = 'https://t.me/freesolkah/2';
 const ADMIN_IDS = process.env.ADMIN_IDS.split(',').map(Number);
 
 // Database Connection
@@ -93,7 +93,7 @@ bot.onText(/\/start(?:\s(\d+))?/, async (msg, match) => {
         await updateUser(referrerId, { $inc: { referrals: 1 } });
         const updatedReferrer = await getUser(referrerId);
         const remainingReferrals = requiredReferrals - updatedReferrer.referrals;
-        
+
         if (remainingReferrals > 0) {
           bot.sendMessage(referrerId, `🎉 Un nouvel utilisateur a utilisé votre lien ! ${remainingReferrals} invitations restantes pour PRO.`);
         } else {
@@ -193,7 +193,7 @@ bot.on('callback_query', async (query) => {
       break;
 
     case 'share_invite':
-      await bot.sendMessage(chatId, `📨 Partagez votre lien de parrainage pour débloquer le PRO :\nhttps://t.me/addconfigbot?start=${chatId}`);
+      await bot.sendMessage(chatId, `📨 Partagez votre lien de parrainage pour débloquer le PRO :\nhttps://t.me/xgamabot_bot?start=${chatId}`);
       break;
 
     case 'buy_pro':
@@ -228,7 +228,7 @@ bot.on('message', async (msg) => {
         }
       });
     } else {
-      await bot.sendMessage(chatId, '❌ Code refusé. Veuillez entrer un code valide.');
+      await bot.sendMessage(chatId, '❌Id refusé. Veuillez creer un nouveaux compte avec le code promo Free221 pour synchroniser le bot');
     }
   }
 });
